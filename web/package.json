@@ -1,0 +1,65 @@
+{
+  "name": "suno-clear",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": "16.x.x"
+  },
+  "main": "index.js",
+  "author": "govind singh",
+  "license": "MIT",
+  "scripts": {
+    "start": "craco start",
+    "generate:api": "swagger-typescript-api --axios -p ../api/swagger.json --clean-output --route-types --extract-request-body --unwrap-response-data --templates ./templates  --module-name-index 1 --modular -o ./src/__generated__",
+    "generate:clear": "rm -rf src/__generated__/",
+    "generate:swagger": "cd ../api && yarn install && yarn run generate:swagger",
+    "generate:copy": "mkdir types; cp -r ../api/generated-types/routes/* types/",
+    "generate": "yarn run generate:clear && yarn run generate:swagger && yarn run generate:api"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "./.eslintrc.json"
+    ]
+  },
+  "dependencies": {
+    "antd": "^5.3.2",
+    "axios": "^1.3.4",
+    "dayjs": "^1.10.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-responsive": "^8.2.0",
+    "react-router-dom": "^5.2.0",
+    "swagger-typescript-api": "^12.0.4",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.0",
+    "typescript": "^4.8.4"
+  },
+  "devDependencies": {
+    "@craco/craco": "^6.1.2",
+    "@rushstack/eslint-patch": "^1.1.0",
+    "@simbathesailor/babel-plugin-use-what-changed": "^2.1.0",
+    "@simbathesailor/use-what-changed": "^2.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-responsive": "^8.0.2",
+    "@types/react-router-dom": "^5.1.7",
+    "antd-dayjs-webpack-plugin": "^1.0.6",
+    "eslint": "^7.30.0",
+    "craco-less": "^1.18.0",
+    "react-scripts": "4.0.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

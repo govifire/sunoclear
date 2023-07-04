@@ -1,0 +1,72 @@
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    /* padding: 10px 10px; */
+    /* gap: 10px; */
+    /* margin: 10px 10px; */
+    /* width: "100%"; */
+    background: #f0f0f0;
+  }
+  
+  .carousel-slide {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    /* width: 300px; */
+    background: white;
+    /* margin: 10px 10px !important; */
+    /* padding-top: 10; */
+    border: 2px solid #346363;
+    border-radius: 4px;
+    transition: transform 0.3s, box-shadow 0.3s; /* Add smooth transitions */
+    transform-style: preserve-3d;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Add a box shadow */
+  }
+
+  .carousel-slide:hover {
+    background-color: #adf2f2;
+    transform: scale(1.1) translateZ(20px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .carousel-dots {
+    bottom: 10px;
+  }
+
+  .ant-carousel .slick-dots li button {
+    background-color: #adf2f2; /* Set your desired color for the dots */
+  }
+  
+  .ant-carousel .slick-dots li.slick-active button {
+    background-color: #083e3e; /* Set your desired color for the active dot */
+  }
+
+  .social_media_icon {
+    background-color: #a5eeee;
+  }
+
+  .social_media_icon:hover {
+    background-color: #3bcbcb;
+  }
+  
+  .welcome_screen {
+    height: 350px;
+  }
+
+  .fade-in > * {
+    animation: fade-in 2s ease-in;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

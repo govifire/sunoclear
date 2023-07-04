@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "ESNEXT",
+    "module": "ESNext",
+    "outDir": "./build/",
+    "moduleResolution": "node",
+    "declaration": true,
+    "declarationDir": "./generated-types/",
+
+    /* Strict Type-Checking Options */
+    "strict": true,
+    "exactOptionalPropertyTypes": true,
+
+    /* Module Resolution Options */
+    "esModuleInterop": true,
+
+    /* Advanced Options */
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* TypeORM */
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
+  }
+}

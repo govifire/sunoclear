@@ -1,0 +1,43 @@
+#body {
+  font-family: 'ProximaNova-Regular', @font-family;
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    /*
+    * Having heading markup (h1-4) separate from the visual display, gives developers the best ability to use
+    * correct hierarchical heading markup.  This affects SEO and screen reader users especially.
+    *
+    * Read more: https://www.w3.org/WAI/tutorials/page-structure/headings/
+    */
+    font-family: 'ProximaNova-Medium', @font-family;
+    word-break: break-word;
+
+    &.as-h1 {
+      font-size: 38px;
+      font-weight: 500;
+      line-height: 1.23;
+    }
+
+    &.as-h2 {
+      font-size: 30px;
+      line-height: 1.35;
+    }
+
+    &.as-h3 {
+      font-size: 24px;
+      line-height: 1.35;
+    }
+
+    &.as-h4 {
+      font-size: 20px;
+      line-height: 1.4;
+    }
+
+    &.as-h5 {
+      font-size: 18px;
+      line-height: 1.4;
+    }
+  }
+}
