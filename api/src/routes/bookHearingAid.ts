@@ -15,7 +15,7 @@ export function registerBookHearingAidRoutes(fastify: FastifyInstance, _: Fastif
   fastify.post<{
     readonly Body: HearingAidFreeTrialRequestType;
   }>(
-    "free-trial",
+    "",
     {
       schema: {
         body: HearingAidFreeTrialRequest,

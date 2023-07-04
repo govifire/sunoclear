@@ -1,7 +1,4 @@
-import { PostgresDataSource } from "../config/PostgresDataSource.js";
 import { courierClient } from "../courier/CourierClient.js";
-import { FreeHearingAidTrial } from "../entity/FreeHearingAidTrial.js";
-import { getFreeHearingAidRepository } from "../repository/FreeHearingAidRepository.js";
 import { Some } from "../utils/Some.js";
 
 type BookHearingAidFreeTrial = {
@@ -13,17 +10,6 @@ type BookHearingAidFreeTrial = {
 
 function makeHearingAidService() {
   const bookHearingAidFreeTrial = async ({ email, name, mobileNumber, userProblem }: BookHearingAidFreeTrial) => {
-    // PostgresDataSource.transaction(async (manager) => {
-    // const freeHearingAidRepository = getFreeHearingAidRepository(manager);
-
-    // await freeHearingAidRepository.baseRepositiory.save(
-    //   new FreeHearingAidTrial({
-    //     email,
-    //     name,
-    //     mobileNumber,
-    //     userProblem,
-    //   })
-    // );
 
     if (Some(email)) {
       try {

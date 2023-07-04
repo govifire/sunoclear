@@ -5,27 +5,13 @@ import cors from "@fastify/cors";
 import fastify from "fastify";
 import fastifySwagger from "@fastify/swagger";
 import fs from "fs";
-import { registerContactUsRoutes } from "./routes/contactUs.js";
 import { registerBookHearingAidRoutes } from "./routes/bookHearingAid.js";
 
 async function startServer(generateSwagger: boolean) {
 
-  // // Connect to DB
   const writeSwaggerFileAndExit = config.allowSwagger && generateSwagger;
 
-  // if (!writeSwaggerFileAndExit) {
-  //   try {
-  //     await PostgresDataSource.initialize();
-  //   } catch (error: unknown) {
-  //     console.error(error);
-  //     process.exit(1);
-  //   }
-  // }
-
-  const server = fastify({
-    ignoreTrailingSlash: true,
-    logger: config.isDevelopment, // No logging, to reduce PII
-  });
+  const server = fastify();
 
   if (config.allowSwagger) {
     server.register(fastifySwagger, {
@@ -44,8 +30,7 @@ async function startServer(generateSwagger: boolean) {
   }
 
   // Application routes
-  server.register(registerContactUsRoutes, { prefix: "api/contact-us/" });
-  server.register(registerBookHearingAidRoutes, { prefix: "api/book-hearing-aid/" });
+  server.register(registerBookHearingAidRoutes, { prefix: "api/hearing-aid-trial/" });
 
   // CORS
   server.register(cors, {

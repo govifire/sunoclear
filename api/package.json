@@ -8,7 +8,7 @@
   "scripts": {
     "gcp-build": "npm run build",
     "build": "rm -rf build && tsc",
-    "start": "node --experimental-specifier-resolution=node build/index.js",
+    "start": "nodemon build/index.js",
     "dev": "nodemon",
     "prescript": "yarn run build && jq '. + { \"main\": \"./google-cloud-functions-index.js\" }' package.json | jq 'del(.scripts)' > build/package.json",
     "script": "sh -c 'functions-framework --target=${0} --source build'",
