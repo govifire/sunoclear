@@ -1,0 +1,9 @@
+{
+    "name": "sunoclear",
+    "version": "1.0.0",
+    "scripts": {
+      "build": "cd web && yarn install && yarn run build",
+      "start": "cd api && yarn install && yarn run build && node build/index.js"
+    }
+  }
+  

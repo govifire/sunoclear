@@ -123,3 +123,5 @@ generated-types/
 
 # generated swagger json from api definitions
 swagger.json
+
+node_modules/

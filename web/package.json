@@ -9,6 +9,7 @@
   "author": "govind singh",
   "license": "MIT",
   "scripts": {
+    "build": "craco build",
     "start": "craco start",
     "generate:api": "swagger-typescript-api --axios -p ../api/swagger.json --clean-output --route-types --extract-request-body --unwrap-response-data --templates ./templates  --module-name-index 1 --modular -o ./src/__generated__",
     "generate:clear": "rm -rf src/__generated__/",
