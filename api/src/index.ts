@@ -1,5 +1,4 @@
 import "reflect-metadata";
-import { PostgresDataSource } from "./config/PostgresDataSource.js";
 import { Some } from "./utils/Some.js";
 import { config } from "./config/config.js";
 import cors from "@fastify/cors";
@@ -11,17 +10,17 @@ import { registerBookHearingAidRoutes } from "./routes/bookHearingAid.js";
 
 async function startServer(generateSwagger: boolean) {
 
-  // Connect to DB
+  // // Connect to DB
   const writeSwaggerFileAndExit = config.allowSwagger && generateSwagger;
 
-  if (!writeSwaggerFileAndExit) {
-    try {
-      await PostgresDataSource.initialize();
-    } catch (error: unknown) {
-      console.error(error);
-      process.exit(1);
-    }
-  }
+  // if (!writeSwaggerFileAndExit) {
+  //   try {
+  //     await PostgresDataSource.initialize();
+  //   } catch (error: unknown) {
+  //     console.error(error);
+  //     process.exit(1);
+  //   }
+  // }
 
   const server = fastify({
     ignoreTrailingSlash: true,
