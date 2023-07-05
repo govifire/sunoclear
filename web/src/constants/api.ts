@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-    baseURL: 'http://localhost:8080/api', // Replace with your backend URL
+    baseURL: 'https://sunoclear.onrender.com/api', // Replace with your backend URL
     headers: {
       'Content-Type': 'application/json',
       // Add any other headers you need, such as authorization headers
