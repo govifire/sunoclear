@@ -1,8 +1,8 @@
 import "./DefineCSSClasses.css";
 import { Button, Checkbox, Col, Form, Input, Row, Typography } from "antd";
 import { useState } from "react";
-import { useApi } from "../utils/useApi";
 import { useDefaultErrorHandler } from "../utils/useDefaultErrorHandler";
+import { bookFreeHearingAidTrial } from "../constants/api";
 
 const { Text } = Typography;
 
@@ -22,14 +22,13 @@ const values = {
 
 export const BookHearingAid = () => {
   const [form] = Form.useForm<BookHearingAid>();
-  const { hearingAidClient } = useApi();
   const { errorHandler } = useDefaultErrorHandler();
   const [hasBooked, setHasBooked] = useState(false);
   const [personName, setPersonName] = useState("");
 
   const submit = async (formValues: BookHearingAid) => {
     try {
-      await hearingAidClient.bookFreeHearingAidTrial({
+      await bookFreeHearingAidTrial({
         email: formValues.email?.trim(),
         name: formValues.name.trim(),
         mobileNumber: formValues.mobileNumber.trim(),

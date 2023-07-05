@@ -9,7 +9,9 @@ import { Request, RequestHandler, Response } from "express";
 //   readonly userProblem?: string;
 // };
 
-export const bookHearingAidFreeTrial: RequestHandler = async (req: Request, res: Response) => {
+console.log("cntrl file")
+
+export const bookHearingAidFreeTrial = async (req: Request, res: Response) => {
   try {
     const { email, name, mobileNumber, userProblem } = req.body;
 
@@ -26,4 +28,6 @@ export const bookHearingAidFreeTrial: RequestHandler = async (req: Request, res:
   } catch (error: unknown) {
     return res.send(500);
   }
+
+  res.end();
 };

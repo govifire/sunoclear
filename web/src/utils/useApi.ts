@@ -1,4 +1,4 @@
-import { HearingAidTrial } from "../__generated__/HearingAidTrial";
+import { BookHearingAid } from "../__generated__/HearingAidTrial";
 import { useMemo } from "react";
 
 export function useApi() {
@@ -9,7 +9,7 @@ export function useApi() {
     };
 
     return {
-      hearingAidClient: new HearingAidTrial(httpClientConfig),
+      hearingAidClient: new BookHearingAid(httpClientConfig),
     };
   }, []);
 }

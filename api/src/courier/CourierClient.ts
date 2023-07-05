@@ -1,5 +1,4 @@
 import { CourierClient } from "@trycourier/courier";
-import { config } from "../config/config.js";
 
 function makeCourierClient() {
   // Creates a client
