@@ -29,6 +29,7 @@ export function DefaultLayout({ children }: Props) {
           left: 0,
           top: "42%",
           backgroundColor: "white",
+          zIndex: 1,
         }}
         width="50px"
       >
